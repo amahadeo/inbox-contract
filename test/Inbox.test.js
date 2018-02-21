@@ -30,6 +30,7 @@ describe('Inbox', () => {
     assert.ok(inbox.options.address);
   });
   // 2 types => Calling a function (retrieving contract data, free), Sending a transaction to a function (changing contract data, costs money)
+  // #call() or #send()
   it('has a default message', async () => { // calling a function/method on the contract is relatively quick but still async
     const message = await inbox.methods.message().call() // first set of arguments are sent to contract respective function, second set customize how function gets called
     assert.equal(message, INITIAL_STRING);
